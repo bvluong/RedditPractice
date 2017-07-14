@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TabContainer from './tabs/tab_container';
+import SearchBar from './search_bar/search_bar';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <TabContainer/>
+        <SearchBar/>
       </div>
     );
   }

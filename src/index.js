@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
-import reducers from './reducers';
+import configureStore from './store/store';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+let store = configureStore();
+window.store = store;
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>
   , document.querySelector('.container'));
