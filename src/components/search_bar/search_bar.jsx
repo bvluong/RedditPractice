@@ -5,6 +5,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = { input: ""};
     this.updateHandler = this.updateHandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   }
 
   updateHandler(e) {
@@ -14,6 +15,8 @@ class SearchBar extends React.Component {
 
   submitHandler(e) {
     e.preventDefault();
+    this.props.fetchPosts(this.state.input);
+    this.setState({input: ""});
   }
 
   render() {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchBar from './search_bar';
-import { fetchPosts } from '../actions/post_actions';
+import { fetchPosts } from '../../actions/post_actions';
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPosts: (username) => dispatch(fetchPosts(username))
