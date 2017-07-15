@@ -6,7 +6,6 @@ class Comments extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let { posts }  = this.props;
     let postsArray = posts.map(post => <li key={post.id}>{post.body}</li>);
     return(
