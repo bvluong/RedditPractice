@@ -3,7 +3,6 @@ import { merge, values } from 'lodash';
 
 const postReducers = (state = {}, action) => {
   Object.freeze(state);
-  console.log(action);
   switch (action.type) {
     case RECEIVE_POSTS:
       let newState = merge({}, state, action.posts);
@@ -14,9 +13,8 @@ const postReducers = (state = {}, action) => {
         body: post.data.body,
         score: post.data.score,
         created: post.data.created
-      };
+        };
       });
-      console.log(posts);
       return newState;
     default:
       return state;
