@@ -9,6 +9,6 @@ export const receiveSubmission = (sub) => ({
 
 export const fetchSubmissions = (username) => dispatch => (
   SubAPIUtil.fetchSubmissions(username).then(
-    res => dispatch(receiveSubmission(res))
+    res => dispatch(receiveSubmission(res.data.data))
   )
 );

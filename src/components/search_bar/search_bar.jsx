@@ -16,6 +16,7 @@ class SearchBar extends React.Component {
   submitHandler(e) {
     e.preventDefault();
     this.props.fetchPosts(this.state.input);
+    this.props.fetchSubmissions(this.state.input);
     this.setState({input: ""});
   }
 
