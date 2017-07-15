@@ -5,7 +5,6 @@ const postReducers = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_POSTS:
-      let newState = merge({}, state, action.posts);
       let posts = {};
       action.posts.forEach(post => {
         posts[post.data.id] = {
@@ -15,6 +14,7 @@ const postReducers = (state = {}, action) => {
         created: post.data.created
         };
       });
+      let newState = merge({}, state, posts);
       return newState;
     default:
       return state;
