@@ -1,4 +1,4 @@
-import RECEIVE_SUBMISSIONS from '../actions/submission_actions';
+import { RECEIVE_SUBMISSIONS } from '../actions/submission_actions';
 import { merge } from 'lodash';
 
 const submissionReducer = (state = {}, action) => {
@@ -16,8 +16,6 @@ const submissionReducer = (state = {}, action) => {
         };
       });
       let newState = merge({}, state, subs);
-      console.log(action);
-      console.log(subs);
       return newState;
     default:
       return state;
